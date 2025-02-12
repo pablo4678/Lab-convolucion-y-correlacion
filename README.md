@@ -46,9 +46,10 @@ plt.show()
 ![image](https://github.com/user-attachments/assets/7c747481-37e3-4988-b658-b585a4db7fc4)
 
 ## Correlación señal senoidal y cosenoidal
-Por medio del código se generó dos señales discretas, una coseno (x1) y otra seno (x2), ambas con una frecuencia de 100 Hz y muestreadas cada 1.25 ms. Luego, calcula la correlación cruzada entre ellas utilizando np.correlate, lo que permite analizar su similitud en diferentes desfases. Finalmente, se genera un vector de desfases (lags) que indica cómo se desplaza x2 respecto a x1, permitiendo identificar la alineación óptima entre ambas señales, que en este caso ocurre con un desfase de 90° debido a la diferencia de fase entre el seno y el coseno.
 
 La correlación es una medida para comprobar que tan similares son dos señales tanto morfológicamente como en su ubicación temporal, la correlación es máxima cuando tienen la misma forma y están en fase, cuando ambas están en fase su producto es positivo, mientras que si hay desfase el valor de la correlación será negativo.
+
+Para hallar la correlación por medio del código, se generó dos señales discretas, una coseno (x1) y otra seno (x2), ambas con una frecuencia de 100 Hz y muestreadas cada 1.25 ms. Luego, calcula la correlación cruzada entre ellas utilizando np.correlate, lo que permite analizar su similitud en diferentes desfases. Finalmente, se genera un vector de desfases (lags) que indica cómo se desplaza x2 respecto a x1, permitiendo identificar la alineación óptima entre ambas señales, que en este caso ocurre con un desfase de 90° debido a la diferencia de fase entre el seno y el coseno.
 # Cálculo de la correlación cruzada
 ```
 # Definición de las señales
@@ -94,8 +95,9 @@ Para el histograma se usó la librería seaborn
 sns.histplot(senal_canal, bins=60, color='purple', edgecolor='black', alpha=0.7, kde=True)
 ```
 ![image](https://github.com/user-attachments/assets/7f913ae4-e52f-4e29-8e9a-c16a8888c1dd)
+
 El histograma muestra cómo se distribuyen las amplitudes de la señal EMG, con una forma bastante simétrica y centrada en 0 mV. Esto significa que la mayoría de los valores están cerca del cero, lo que encaja con la media cercana a cero que vimos antes. La señal parece tener una variabilidad moderada, con pocos valores extremos, lo que sugiere que es una señal limpia y bien procesada. Este tipo de distribución es común en señales EMG en reposo o con poca actividad muscular.
-##  Descrpción de la señal en cuanto a su clasificación
+##  Descripción de la señal en cuanto a su clasificación
 La señal de electromiografía (EMG) mide la actividad eléctrica generada por los músculos y se clasifica como una señal biológica no estacionaria, ya que su amplitud y frecuencia varían con el tiempo según la activación muscular. Además, es una  señal discreta y no periódica, ya que ha sido digitalizada a partir de una señal continua mediante un proceso de muestreo y no presenta un patrón repetitivo definido.  
 
 En el dominio del tiempo, la señal analizada está centrada en 0 mV, con variabilidad moderada y pocos valores extremos, lo que sugiere que corresponde a una EMG en reposo o con baja activación muscular. Su amplitud depende del nivel de actividad muscular, aumentando cuando hay mayor reclutamiento de unidades motoras y disminuyendo en estados de relajación.
@@ -155,10 +157,12 @@ Se realizó también un histograma de frecuencias, se obtuvo un histograma de "C
 ![image](https://github.com/user-attachments/assets/bf1603b2-f417-4496-aacb-9191bbcf3d50)
 ## Bibliografía 
 Millones, R., Barreno, E., Vásquez, F., & Castillo, C. (2018). Estadística Descriptiva y probabilidades. Aplicaciones en la ingeniería y los negocios. Lima: Universidad de Lima. Fondo Editorial.
+
 Jiang, N., Pradhan, A., & He, J. (2024). Gesture Recognition and Biometrics ElectroMyogram (GRABMyo) (version 1.1.0). PhysioNet. https://doi.org/10.13026/89dm-f662.
+
 Pradhan, A., He, J. & Jiang, N. Multi-day dataset of forearm and wrist electromyogram for hand gesture recognition and biometrics. Sci Data 9, 733 (2022). https://doi.org/10.1038/s41597-022-01836-y
 
 ## Colaboradores
-* Catalina Martinez 
+* Catalina Martínez 
 * Pablo Acevedo
-* Laura Avila
+* Laura Ávila
