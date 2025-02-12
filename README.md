@@ -142,7 +142,9 @@ print(f"Frecuencia Media: {frecuencia_media:.2f} Hz")
 print(f"Frecuencia Mediana: {frecuencia_mediana:.2f} Hz")
 print(f"Desviación Estándar de Frecuencia: {desviacion_frecuencia:.2f} Hz")
 ```
-Se realizó tambien un histograma de frecuencias, se obtuvo un histograma de "Cliff" o en precipicio sesgado a la derecha, lo que significa que la señal tiene mayor componente de bajas frecuencias
+Se realizó tambien un histograma de frecuencias, se obtuvo un histograma de "Cliff" o en precipicio sesgado a la derecha, lo que significa que la señal tiene mayor componente de bajas frecuencias.
+
+
 ![image](https://github.com/user-attachments/assets/0d41f899-94d3-40dc-9462-0ab7c26ee3b1)
 ![image](https://github.com/user-attachments/assets/bf1603b2-f417-4496-aacb-9191bbcf3d50)
 
