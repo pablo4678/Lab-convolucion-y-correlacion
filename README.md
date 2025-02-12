@@ -90,6 +90,8 @@ sns.histplot(senal_canal, bins=60, color='purple', edgecolor='black', alpha=0.7,
 ```
 ![image](https://github.com/user-attachments/assets/7f913ae4-e52f-4e29-8e9a-c16a8888c1dd)
 ## Analisis de la señal en el dominio de la frecuencia
+
+
 ```
 # ---- TRANSFORMADA DE FOURIER ----
 N = len(senal_canal)  # Número de muestras
