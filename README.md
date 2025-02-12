@@ -11,7 +11,7 @@ En el presente laboratorio se implementa código para realizar una convolucion e
 >rom scipy.signal import welch
 > ```
 ## Calcular la convolución
-*describir que es la convolucion
+La convolución es una operación matemática que describe el comportamiento de una señal, al "deslizarse" una sobre la otra multiplicandose sus valores, esto es importante en el procesamiento digital de señales para diseñar sistemas lineales de tiempo como por ejemplo filtros digitales.n
 En el ejemplo se almacenó la informacion del sistema en un vector y la de la señal en otro, posteriormente se usa la función de la libreria numpy "convolve" para obtener el resultado de la convolución
 ```
 vectorh = [5,6,0,0,8,0,7]
