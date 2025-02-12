@@ -93,6 +93,7 @@ sns.histplot(senal_canal, bins=60, color='purple', edgecolor='black', alpha=0.7,
 ![image](https://github.com/user-attachments/assets/7f913ae4-e52f-4e29-8e9a-c16a8888c1dd)
 El histograma muestra cómo se distribuyen las amplitudes de la señal EMG, con una forma bastante simétrica y centrada en 0 mV. Esto significa que la mayoría de los valores están cerca del cero, lo que encaja con la media cercana a cero que vimos antes. La señal parece tener una variabilidad moderada, con pocos valores extremos, lo que sugiere que es una señal limpia y bien procesada. Este tipo de distribución es común en señales EMG en reposo o con poca actividad muscular.
 ## Analisis de la señal en el dominio de la frecuencia
+Usamos la transformada discreta de Fourier, pues la señal tomada no es periódica ni continua, es importante pues con ella se puede analizar la estructura espectral de una señal, y observar sus componentes en frecuencia
 ```
 # ---- TRANSFORMADA DE FOURIER ----
 N = len(senal_canal)  # Número de muestras
