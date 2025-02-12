@@ -39,6 +39,7 @@ plt.title("Gráfica de la convolución")
 plt.grid()
 plt.show()
 ```
+ddd
 
 
 
