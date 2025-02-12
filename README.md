@@ -78,20 +78,21 @@ tiempo = np.arange(senal.shape[0]) / frecuencia
 Se calcularon los estadísticos descriptivos usando numpy 
 ```
 # Calcular estadísticas con NumPy
+frecuencia = record.fs
 media = np.mean(senal_canal)  # Media
 desviacion = np.std(senal_canal, ddof=1)  # Desviación estándar
 coef_variacion = (desviacion / media) * 100  # Coeficiente de variación (%)}
 ```
-![image](https://github.com/user-attachments/assets/e13f9623-fef2-47bc-86c7-241628779386)
+![image](https://github.com/user-attachments/assets/60f11716-6064-4578-b0b2-435c740027cc)
+En relación con el electromiograma, los estadísticos muestran una media cercana a cero (-0.000), lo que indica una señal bien centrada, y una desviación estándar de 0.048, sugiriendo una variabilidad moderada en la actividad muscular. Sin embargo, el coeficiente de variación (-650307.20%) es anormalmente alto y negativo, probablemente debido a la media cercana a cero, lo que hace que este indicador no sea fiable.
 
 Para el histograma se usó la librería seaborn
 ```
 sns.histplot(senal_canal, bins=60, color='purple', edgecolor='black', alpha=0.7, kde=True)
 ```
 ![image](https://github.com/user-attachments/assets/7f913ae4-e52f-4e29-8e9a-c16a8888c1dd)
+El histograma muestra cómo se distribuyen las amplitudes de la señal EMG, con una forma bastante simétrica y centrada en 0 mV. Esto significa que la mayoría de los valores están cerca del cero, lo que encaja con la media cercana a cero que vimos antes. La señal parece tener una variabilidad moderada, con pocos valores extremos, lo que sugiere que es una señal limpia y bien procesada. Este tipo de distribución es común en señales EMG en reposo o con poca actividad muscular.
 ## Analisis de la señal en el dominio de la frecuencia
-
-
 ```
 # ---- TRANSFORMADA DE FOURIER ----
 N = len(senal_canal)  # Número de muestras
