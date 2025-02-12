@@ -53,6 +53,30 @@ x2 = np.sin(2 * np.pi * 100 * n * Ts)  # Señal x2[nTs]
 correlacion = np.correlate(x1, x2, mode="full")#Calcula la correlación cruzada de las señales
 lags = np.arange(-len(x1) + 1, len(x1))  # Valores de desfase
 ```
+## Caracterización de la señal en función del tiempo y estadísticos descriptivos
+Caracterización en función del tiempo
+```
+# Convertir muestras a tiempo en segundos
+tiempo = np.arange(senal.shape[0]) / frecuencia
+```
+> [!TIP]
+>Para un análisis mas sencillo de la señal tome solo un canal de la electromiografía
+>```
+># Seleccionar un solo canal (por ejemplo, el primero)
+>canal_idx = 0  # Cambia este índice para elegir otro canal
+>senal_canal = senal[:, canal_idx]
+> ```
+Se calcularon los estadísticos descriptivos usando numpy 
+```
+# Calcular estadísticas con NumPy
+media = np.mean(senal_canal)  # Media
+desviacion = np.std(senal_canal, ddof=1)  # Desviación estándar
+coef_variacion = (desviacion / media) * 100  # Coeficiente de variación (%)}
+```
+Para el histograma se usó la librería seaborn
+```
+sns.histplot(senal_canal, bins=60, color='purple', edgecolor='black', alpha=0.7, kde=True)
+```
 
 
 
