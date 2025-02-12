@@ -126,8 +126,19 @@ plt.show()
 ```
 ![image](https://github.com/user-attachments/assets/a499d089-d12c-47c6-a774-c714c60d5f55)
 
-
-
-
+## Estadísticos descriptivos en función de la frecuencia
+```
+#calcular estadisticos para frecuencia
+frecuencia_media = np.sum(frecuencias * fft_result) / np.sum(fft_result)
+desviacion_frecuencia = np.sqrt(np.sum(fft_result * (frecuencias - frecuencia_media)**2) / np.sum(fft_result))
+acumulado = np.cumsum(fft_result)  
+total = np.sum(fft_result)
+frecuencia_mediana = frecuencias[np.where(acumulado >=total / 2)[0][0]]
+plt.figure(figsize=(10, 6))
+plt.hist(frecuencias, bins=80, weights=fft_result, color='blue', edgecolor='black', alpha=0.7)
+print(f"Frecuencia Media: {frecuencia_media:.2f} Hz")
+print(f"Frecuencia Mediana: {frecuencia_mediana:.2f} Hz")
+print(f"Desviación Estándar de Frecuencia: {desviacion_frecuencia:.2f} Hz")
+```
 
 
