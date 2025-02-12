@@ -127,6 +127,8 @@ plt.show()
 ![image](https://github.com/user-attachments/assets/a499d089-d12c-47c6-a774-c714c60d5f55)
 
 ## Estadísticos descriptivos en función de la frecuencia
+
+Para obtener la frecuencia media se sumaron todos los datos obtenidos de la transformada de Fourier y se dividio entre el total, usando la media se calculo la desviación de la frecuencia, y para calcular la mediana se uso una función para sumas acumulativas, de esta manera se puede dividir la mitad inferior de los datos de la mitad superior para hallar la mediana.
 ```
 #calcular estadisticos para frecuencia
 frecuencia_media = np.sum(frecuencias * fft_result) / np.sum(fft_result)
@@ -140,5 +142,7 @@ print(f"Frecuencia Media: {frecuencia_media:.2f} Hz")
 print(f"Frecuencia Mediana: {frecuencia_mediana:.2f} Hz")
 print(f"Desviación Estándar de Frecuencia: {desviacion_frecuencia:.2f} Hz")
 ```
-
+Se realizó tambien un histograma de frecuencias, se obtuvo un histograma de "Cliff" o en precipicio sesgado a la derecha, lo que significa que la señal tiene mayor componente de bajas frecuencias
+![image](https://github.com/user-attachments/assets/0d41f899-94d3-40dc-9462-0ab7c26ee3b1)
+![image](https://github.com/user-attachments/assets/bf1603b2-f417-4496-aacb-9191bbcf3d50)
 
