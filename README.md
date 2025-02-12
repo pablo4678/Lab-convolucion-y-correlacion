@@ -152,6 +152,8 @@ Se realizó tambien un histograma de frecuencias, se obtuvo un histograma de "Cl
 ![image](https://github.com/user-attachments/assets/bf1603b2-f417-4496-aacb-9191bbcf3d50)
 ## Bibliografía 
 Millones, R., Barreno, E., Vásquez, F., & Castillo, C. (2018). Estadística Descriptiva y probabilidades. Aplicaciones en la ingeniería y los negocios. Lima: Universidad de Lima. Fondo Editorial.
+Jiang, N., Pradhan, A., & He, J. (2024). Gesture Recognition and Biometrics ElectroMyogram (GRABMyo) (version 1.1.0). PhysioNet. https://doi.org/10.13026/89dm-f662.
+Pradhan, A., He, J. & Jiang, N. Multi-day dataset of forearm and wrist electromyogram for hand gesture recognition and biometrics. Sci Data 9, 733 (2022). https://doi.org/10.1038/s41597-022-01836-y
 
 ## Colaboradores
 * Catalina Martinez 
