@@ -151,4 +151,10 @@ Se realizó tambien un histograma de frecuencias, se obtuvo un histograma de "Cl
 
 ![image](https://github.com/user-attachments/assets/0d41f899-94d3-40dc-9462-0ab7c26ee3b1)
 ![image](https://github.com/user-attachments/assets/bf1603b2-f417-4496-aacb-9191bbcf3d50)
+## Bibliografía 
+Millones, R., Barreno, E., Vásquez, F., & Castillo, C. (2018). Estadística Descriptiva y probabilidades. Aplicaciones en la ingeniería y los negocios. Lima: Universidad de Lima. Fondo Editorial.
 
+## Colaboradores
+* Catalina Martinez 
+* Pablo Acevedo
+* Laura Avila
