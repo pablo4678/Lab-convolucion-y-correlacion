@@ -89,10 +89,15 @@ Para el histograma se usó la librería seaborn
 sns.histplot(senal_canal, bins=60, color='purple', edgecolor='black', alpha=0.7, kde=True)
 ```
 ![image](https://github.com/user-attachments/assets/7f913ae4-e52f-4e29-8e9a-c16a8888c1dd)
-
-
-
-
+## Analisis de la señal en el dominio de la frecuencia
+```
+# ---- TRANSFORMADA DE FOURIER ----
+N = len(senal_canal)  # Número de muestras
+fft_result = np.fft.fft(senal_canal)  # Transformada de Fourier
+frecuencias = np.fft.fftfreq(N, d=1/frecuencia)  # Eje de frecuencias
+fft_result = np.abs(fft_result[:N//2])  # Magnitud de la FFT (solo parte positiva) dada la simetria
+frecuencias = frecuencias[:N//2]  # Filtrar solo las frecuencias positivas
+```
 
 
 
