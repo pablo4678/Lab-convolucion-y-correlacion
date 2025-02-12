@@ -47,6 +47,9 @@ plt.show()
 
 ## Correlación señal senoidal y cosenoidal
 El código genera dos señales discretas, una coseno (x1) y otra seno (x2), ambas con una frecuencia de 100 Hz y muestreadas cada 1.25 ms. Luego, calcula la correlación cruzada entre ellas utilizando np.correlate, lo que permite analizar su similitud en diferentes desfases. Finalmente, se genera un vector de desfases (lags) que indica cómo se desplaza x2 respecto a x1, permitiendo identificar la alineación óptima entre ambas señales, que en este caso ocurre con un desfase de 90° debido a la diferencia de fase entre el seno y el coseno.
+
+La correlación es una medida para comprobar que tan similares son dos señales tanto morfológicamente como en su ubicación temporal, la correlación es máxima cuando tienen la misma forma y están en fase, cuando ambas están en fase su producto es positivo, mientras que si hay desfase el valor de la correlación será negativo.
+# Cálculo de la correlación cruzada
 ```
 # Definición de las señales
 Ts = 1.25e-3  # Período de muestreo
@@ -55,7 +58,6 @@ n = np.arange(0, 9)  # Valores de n
 x1 = np.cos(2 * np.pi * 100 * n * Ts)  # Señal x1[nTs]
 x2 = np.sin(2 * np.pi * 100 * n * Ts)  # Señal x2[nTs]
 
-# Cálculo de la correlación cruzada
 correlacion = np.correlate(x1, x2, mode="full")#Calcula la correlación cruzada de las señales
 lags = np.arange(-len(x1) + 1, len(x1))  # Valores de desfase
 ```
