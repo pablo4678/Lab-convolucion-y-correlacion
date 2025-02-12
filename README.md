@@ -1,6 +1,6 @@
 # Lab-convolución-y-correlación
-## Descripcion
-En el presente laboratorio se implementa código para realizar una convolucion entre un sistema y una señal, también se analiza la correlación entre dos señales y se aplica la transformada de Fourier para pasar la señal del dominio del tiempo al dominio de la frecuencia.
+## Descripción
+En el presente laboratorio se implementa código para realizar una convolución entre un sistema y una señal, también se analiza la correlación entre dos señales y se aplica la transformada de Fourier para pasar la señal del dominio del tiempo al dominio de la frecuencia.
 > [!TIP]
 >Librerias necesarias:
 >```
@@ -12,7 +12,7 @@ En el presente laboratorio se implementa código para realizar una convolucion e
 > ```
 ## Calcular la convolución
 La convolución es una operación matemática que describe el comportamiento de una señal, al "deslizarse" una sobre la otra multiplicandose sus valores, esto es importante en el procesamiento digital de señales para diseñar sistemas lineales de tiempo como por ejemplo filtros digitales.n
-En el ejemplo se almacenó la informacion del sistema en un vector y la de la señal en otro, posteriormente se usa la función de la libreria numpy "convolve" para obtener el resultado de la convolución
+En el ejemplo se almacenó la informacion del sistema en un vector y la de la señal en otro, posteriormente se usa la función de la libreria numpy "convolve" para obtener el resultado de la convolución.
 ```
 vectorh = [5,6,0,0,8,0,7]
 vectorx= [1,1,1,8,1,6,7,8,4,2]
@@ -24,7 +24,7 @@ print(vectory)
 ```
 ![image](https://github.com/user-attachments/assets/2d9125c9-d2bf-4bb2-a2c2-fc7dc163f3d7)
 
-Para graficar la convolucion se rellena la matriz ejex con el numero de datos de la convolución, despues usando las funciones vlines y scatter se hacen las barras que tienen el valor y dado por la convolucion
+Para graficar la convolución se rellena la matriz ejex con el numero de datos de la convolución, despues usando las funciones vlines y scatter, se hacen las barras que tienen el valor y dado por la convolución.
 ```
 ejex=[]
 for i in range(len(vectory)):
@@ -46,7 +46,7 @@ plt.show()
 ![image](https://github.com/user-attachments/assets/7c747481-37e3-4988-b658-b585a4db7fc4)
 
 ## Correlación señal senoidal y cosenoidal
-El código genera dos señales discretas, una coseno (x1) y otra seno (x2), ambas con una frecuencia de 100 Hz y muestreadas cada 1.25 ms. Luego, calcula la correlación cruzada entre ellas utilizando np.correlate, lo que permite analizar su similitud en diferentes desfases. Finalmente, se genera un vector de desfases (lags) que indica cómo se desplaza x2 respecto a x1, permitiendo identificar la alineación óptima entre ambas señales, que en este caso ocurre con un desfase de 90° debido a la diferencia de fase entre el seno y el coseno.
+Por medio del código se generó dos señales discretas, una coseno (x1) y otra seno (x2), ambas con una frecuencia de 100 Hz y muestreadas cada 1.25 ms. Luego, calcula la correlación cruzada entre ellas utilizando np.correlate, lo que permite analizar su similitud en diferentes desfases. Finalmente, se genera un vector de desfases (lags) que indica cómo se desplaza x2 respecto a x1, permitiendo identificar la alineación óptima entre ambas señales, que en este caso ocurre con un desfase de 90° debido a la diferencia de fase entre el seno y el coseno.
 
 La correlación es una medida para comprobar que tan similares son dos señales tanto morfológicamente como en su ubicación temporal, la correlación es máxima cuando tienen la misma forma y están en fase, cuando ambas están en fase su producto es positivo, mientras que si hay desfase el valor de la correlación será negativo.
 # Cálculo de la correlación cruzada
@@ -71,7 +71,7 @@ Caracterización en función del tiempo
 tiempo = np.arange(senal.shape[0]) / frecuencia
 ```
 > [!TIP]
->Para un análisis mas sencillo de la señal tome solo un canal de la electromiografía
+>Para un análisis mas sencillo de la señal se tomó un canal de la electromiografía
 >```
 ># Seleccionar un solo canal (por ejemplo, el primero)
 >canal_idx = 0  # Cambia este índice para elegir otro canal
@@ -86,6 +86,7 @@ desviacion = np.std(senal_canal, ddof=1)  # Desviación estándar
 coef_variacion = (desviacion / media) * 100  # Coeficiente de variación (%)}
 ```
 ![image](https://github.com/user-attachments/assets/60f11716-6064-4578-b0b2-435c740027cc)
+
 En relación con el electromiograma, los estadísticos muestran una media cercana a cero (-0.000), lo que indica una señal bien centrada, y una desviación estándar de 0.048, sugiriendo una variabilidad moderada en la actividad muscular. Sin embargo, el coeficiente de variación (-650307.20%) es anormalmente alto y negativo, probablemente debido a la media cercana a cero, lo que hace que este indicador no sea fiable.
 
 Para el histograma se usó la librería seaborn
@@ -98,8 +99,8 @@ El histograma muestra cómo se distribuyen las amplitudes de la señal EMG, con 
 La señal de electromiografía (EMG) mide la actividad eléctrica generada por los músculos y se clasifica como una señal biológica no estacionaria, ya que su amplitud y frecuencia varían con el tiempo según la activación muscular. Además, es una  señal discreta y no periódica, ya que ha sido digitalizada a partir de una señal continua mediante un proceso de muestreo y no presenta un patrón repetitivo definido.  
 
 En el dominio del tiempo, la señal analizada está centrada en 0 mV, con variabilidad moderada y pocos valores extremos, lo que sugiere que corresponde a una EMG en reposo o con baja activación muscular. Su amplitud depende del nivel de actividad muscular, aumentando cuando hay mayor reclutamiento de unidades motoras y disminuyendo en estados de relajación.
-## Analisis de la señal en el dominio de la frecuencia
-Usamos la transformada discreta de Fourier, pues la señal tomada no es periódica ni continua, es importante pues con ella se puede analizar la estructura espectral de una señal, y observar sus componentes en frecuencia
+## Análisis de la señal en el dominio de la frecuencia
+Usamos la transformada discreta de Fourier, pues la señal tomada no es periódica ni continua, es importante pues con ella se puede analizar la estructura espectral de una señal, y observar sus componentes en frecuencia.
 ```
 # ---- TRANSFORMADA DE FOURIER ----
 N = len(senal_canal)  # Número de muestras
@@ -108,7 +109,7 @@ frecuencias = np.fft.fftfreq(N, d=1/frecuencia)  # Eje de frecuencias
 fft_result = np.abs(fft_result[:N//2])  # Magnitud de la FFT (solo parte positiva) dada la simetria
 frecuencias = frecuencias[:N//2]  # Filtrar solo las frecuencias positivas
 ```
-Después se codificó para obtener la gráfica de la transformada de fourier, y la densidad espectral, que es importante para analizar la señal, pues no todos los componentes de frecuencia contienen la misma energía, con una gráfica de densidad espectral de potencia se puede ver que frecuencias aportan más energía
+Después se codificó para obtener la gráfica de la transformada de Fourier, y la densidad espectral, que es importante para analizar la señal, pues no todos los componentes de frecuencia contienen la misma energía, con una gráfica de densidad espectral de potencia se puede ver que frecuencias aportan más energía.
 ```
 # Gráfico de la Transformada de Fourier
 plt.subplot(2, 1, 1)
@@ -147,7 +148,7 @@ print(f"Frecuencia Media: {frecuencia_media:.2f} Hz")
 print(f"Frecuencia Mediana: {frecuencia_mediana:.2f} Hz")
 print(f"Desviación Estándar de Frecuencia: {desviacion_frecuencia:.2f} Hz")
 ```
-Se realizó tambien un histograma de frecuencias, se obtuvo un histograma de "Cliff" o en precipicio sesgado a la derecha, lo que significa que la señal tiene mayor componente de bajas frecuencias.
+Se realizó también un histograma de frecuencias, se obtuvo un histograma de "Cliff" o en Precipicio Sesgado a la derecha, lo que significa que la señal tiene mayor componente de bajas frecuencias.
 
 
 ![image](https://github.com/user-attachments/assets/0d41f899-94d3-40dc-9462-0ab7c26ee3b1)
