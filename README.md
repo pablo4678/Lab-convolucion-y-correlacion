@@ -126,6 +126,10 @@ plt.show()
 ```
 ![image](https://github.com/user-attachments/assets/a499d089-d12c-47c6-a774-c714c60d5f55)
 
+##  Descrpción de la señal en cuanto a su clasificación
+La señal analizada es una señal de electromiografía (EMG), la cual mide la actividad eléctrica generada por los músculos. En función de sus características, puede clasificarse como una señal biológica no estacionaria, ya que su amplitud y frecuencia pueden variar con el tiempo según la activación muscular.  
+
+Con base en su distribución en el dominio del tiempo, la señal parece estar centrada en 0 mV, con variabilidad moderada y pocos valores extremos, lo que sugiere que es una EMG en reposo o con baja activación muscular.
 ## Estadísticos descriptivos en función de la frecuencia
 
 Para obtener la frecuencia media se sumaron todos los datos obtenidos de la transformada de Fourier y se dividio entre el total, usando la media se calculo la desviación de la frecuencia, y para calcular la mediana se uso una función para sumas acumulativas, de esta manera se puede dividir la mitad inferior de los datos de la mitad superior para hallar la mediana.
