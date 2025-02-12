@@ -82,10 +82,13 @@ media = np.mean(senal_canal)  # Media
 desviacion = np.std(senal_canal, ddof=1)  # Desviación estándar
 coef_variacion = (desviacion / media) * 100  # Coeficiente de variación (%)}
 ```
+![image](https://github.com/user-attachments/assets/e13f9623-fef2-47bc-86c7-241628779386)
+
 Para el histograma se usó la librería seaborn
 ```
 sns.histplot(senal_canal, bins=60, color='purple', edgecolor='black', alpha=0.7, kde=True)
 ```
+![image](https://github.com/user-attachments/assets/7f913ae4-e52f-4e29-8e9a-c16a8888c1dd)
 
 
 
