@@ -22,6 +22,8 @@ print("LAURA y[n]")
 print(vectory)
 
 ```
+![image](https://github.com/user-attachments/assets/2d9125c9-d2bf-4bb2-a2c2-fc7dc163f3d7)
+
 Para graficar la convolucion se rellena la matriz ejex con el numero de datos de la convolución, despues usando las funciones vlines y scatter se hacen las barras que tienen el valor y dado por la convolucion
 ```
 ejex=[]
@@ -39,6 +41,10 @@ plt.title("Gráfica de la convolución")
 plt.grid()
 plt.show()
 ```
+![image](https://github.com/user-attachments/assets/d1391f57-912f-4b9a-a4aa-45147077a721)
+![image](https://github.com/user-attachments/assets/cf69bbc2-e15b-4065-b1c9-a15b2c36feac)
+![image](https://github.com/user-attachments/assets/7c747481-37e3-4988-b658-b585a4db7fc4)
+
 ## Correlación señal senoidal y cosenoidal
 El código genera dos señales discretas, una coseno (x1) y otra seno (x2), ambas con una frecuencia de 100 Hz y muestreadas cada 1.25 ms. Luego, calcula la correlación cruzada entre ellas utilizando np.correlate, lo que permite analizar su similitud en diferentes desfases. Finalmente, se genera un vector de desfases (lags) que indica cómo se desplaza x2 respecto a x1, permitiendo identificar la alineación óptima entre ambas señales, que en este caso ocurre con un desfase de 90° debido a la diferencia de fase entre el seno y el coseno.
 ```
@@ -53,6 +59,9 @@ x2 = np.sin(2 * np.pi * 100 * n * Ts)  # Señal x2[nTs]
 correlacion = np.correlate(x1, x2, mode="full")#Calcula la correlación cruzada de las señales
 lags = np.arange(-len(x1) + 1, len(x1))  # Valores de desfase
 ```
+![image](https://github.com/user-attachments/assets/2e9728e0-3b6b-4861-a7e0-035555b710b0)
+![image](https://github.com/user-attachments/assets/d735adbe-4419-4ed0-8336-27a7b8096f06)
+
 ## Caracterización de la señal en función del tiempo y estadísticos descriptivos
 Caracterización en función del tiempo
 ```
