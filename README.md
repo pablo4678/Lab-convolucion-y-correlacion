@@ -102,6 +102,7 @@ frecuencias = np.fft.fftfreq(N, d=1/frecuencia)  # Eje de frecuencias
 fft_result = np.abs(fft_result[:N//2])  # Magnitud de la FFT (solo parte positiva) dada la simetria
 frecuencias = frecuencias[:N//2]  # Filtrar solo las frecuencias positivas
 ```
+Después se codificó para obtener la gráfica de la transformada de fourier, y la densidad espectral, que es importante para analizar la señal, pues no todos los componentes de frecuencia contienen la misma energía, con una gráfica de densidad espectral de potencia se puede ver que frecuencias aportan más energía
 ```
 # Gráfico de la Transformada de Fourier
 plt.subplot(2, 1, 1)
