@@ -1,4 +1,4 @@
-# Lab-convolucion-y-correlacion
+# Lab-convolución-y-correlación
 ## Descripcion
 En el presente laboratorio se implementa código para realizar una convolucion entre un sistema y una señal, también se analiza la correlación entre dos señales y se aplica la transformada de Fourier para pasar la señal del dominio del tiempo al dominio de la frecuencia.
 > [!TIP]
