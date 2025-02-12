@@ -102,7 +102,28 @@ frecuencias = np.fft.fftfreq(N, d=1/frecuencia)  # Eje de frecuencias
 fft_result = np.abs(fft_result[:N//2])  # Magnitud de la FFT (solo parte positiva) dada la simetria
 frecuencias = frecuencias[:N//2]  # Filtrar solo las frecuencias positivas
 ```
+```
+# Gráfico de la Transformada de Fourier
+plt.subplot(2, 1, 1)
+plt.plot(frecuencias, fft_result, color='r', linewidth=1.5)
+plt.title(f"Transformada de Fourier - {etiquetas[canal_idx]}")
+plt.xlabel("Frecuencia (Hz)")
+plt.ylabel("Magnitud")
+plt.grid(True, linestyle="--", alpha=0.7)
 
+# Gráfico de la Densidad Espectral de Potencia (PSD)
+plt.subplot(2, 1, 2)
+plt.semilogy(frecs_psd, psd, color='b', linewidth=1.5)
+plt.title(f"Densidad Espectral de Potencia (PSD) - {etiquetas[canal_idx]}")
+plt.xlabel("Frecuencia (Hz)")
+plt.ylabel("Densidad de Potencia")
+plt.grid(True, linestyle="--", alpha=0.7)
+
+plt.tight_layout()
+plt.savefig("ecg_fft_psd.png", dpi=300, bbox_inches='tight')
+plt.show()
+```
+![image](https://github.com/user-attachments/assets/a499d089-d12c-47c6-a774-c714c60d5f55)
 
 
 
